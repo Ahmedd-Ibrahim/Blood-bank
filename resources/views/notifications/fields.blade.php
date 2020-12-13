@@ -13,7 +13,7 @@
 <!-- Donation Order Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('donation_order_id', 'Donation Order Id:') !!}
-    {!! Form::text('donation_order_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('donation_order_id',\App\Models\DonationOrder::pluck('name','id'), null,['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

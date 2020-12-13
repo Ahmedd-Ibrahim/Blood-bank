@@ -13,7 +13,7 @@
 <!-- Client Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('client_id', 'Client Id:') !!}
-    {!! Form::number('client_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('client_id', \App\Models\Client::pluck('name','id'),null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

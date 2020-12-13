@@ -54,6 +54,10 @@ class Post extends Model
      */
     public static $rules = [
 
+        'title'  => 'required',
+        'content' => 'required',
+        'image' => 'required',
+        'category_id' => 'required'
     ];
 
 

@@ -65,6 +65,14 @@ class Client extends Model
      */
     public static $rules = [
 
+        'name' => 'required',
+        'email'=> 'required',
+        'bdate'=> 'required',
+        'blood_type_id'=> 'required',
+        'last_donation_date'=> 'required',
+        'city_id' => 'required',
+        'phone'   => 'required',
+        'password'=> 'required'
     ];
 
 

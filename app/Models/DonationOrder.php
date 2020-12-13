@@ -38,7 +38,8 @@ class DonationOrder extends Model
         'notes',
         'city_id',
         'blood_type_id',
-        'client_id'
+        'client_id',
+        'age'
     ];
 
     /**
@@ -65,6 +66,15 @@ class DonationOrder extends Model
      */
     public static $rules = [
 
+        'name' => 'required',
+        'blood_count'=> 'required',
+        'hospital_address'=> 'required',
+        'phone'=> 'required',
+        'notes'=> 'required',
+        'city_id'=> 'required',
+        'blood_type_id'=> 'required',
+        'client_id'=> 'required',
+        'age'=> 'required'
     ];
 
     /* Begin Relations*/

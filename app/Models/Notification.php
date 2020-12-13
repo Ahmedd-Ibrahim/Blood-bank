@@ -49,6 +49,10 @@ class Notification extends Model
      */
     public static $rules = [
 
+
+        'title'  => 'required',
+        'content'  => 'required',
+        'donation_order_id' => 'required'
     ];
 
     public function DonationOrder()

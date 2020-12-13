@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->text('email');
             $table->date('bdate');
-            $table->integer('last_donation_date')->unsigned();
+            $table->integer('last_donation_date');
             $table->integer('blood_type_id')->unsigned();
             $table->integer('city_id')->unsigned();
             $table->text('phone');

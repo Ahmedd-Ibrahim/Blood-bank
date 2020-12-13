@@ -7,7 +7,7 @@
 <!-- Governorate Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('governorate_id', 'Governorate Id:') !!}
-    {!! Form::number('governorate_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('governorate_id', \App\Models\Governorate::pluck('name','id'),null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->
