@@ -40,4 +40,54 @@ class PostRepository extends BaseRepository
     {
         return Post::class;
     }
+
+    public function create($input)
+    {
+        if(isset($input['image']))
+        {
+            $photo = Resize($input['image'],'posts',300,250);
+
+            $input['image'] = $photo;
+        }
+        $model = $this->model->newInstance($input);
+
+        $model->save();
+
+        return $model;
+    } // end of create
+
+    public function update($input, $id)
+    {
+        $query = $this->model->newQuery();
+
+        $model = $query->findOrFail($id);
+
+        if (isset($model->image))
+        {
+            RemoveImageFromDisk($model->image);
+            if(isset($input['image']))
+            {
+                $photo = Resize($input['image'],'posts',300,250);
+                $input['image'] = $photo;
+            }
+        }
+        $model->fill($input);
+
+        $model->save();
+
+        return $model;
+    } // end of update
+
+    public function delete($id)
+    {
+        $query = $this->model->newQuery();
+
+        $model = $query->findOrFail($id);
+
+        if (isset($model->image))
+        {
+            RemoveImageFromDisk($model->image);
+        }
+        return $model->delete();
+    }// end of delete
 }
